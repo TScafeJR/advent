@@ -26,22 +26,13 @@ const meetsPt2Criteria = pswObj => {
     const firstLetter = letterArr[firstIndex - 1];
     const secondLetter = letterArr[secondIndex - 1];
 
-    if (firstLetter !== letter && secondLetter !== letter) {
-        return false;
-    } else {
-        return !(firstLetter === letter && secondLetter === letter);
-    }
+    return (firstLetter !== letter && secondLetter !== letter) ?
+        false :
+        !(firstLetter === letter && secondLetter === letter);
 }
 
 const day2Solution = (inputArr, criteraMethod) => {
-    const arr = inputArr.map(inputString => {
-        if (criteraMethod(parsePsw(inputString))) {
-            return 1
-        } else {
-            return 0
-        }
-    });
-
+    const arr = inputArr.map(inputString => criteraMethod(parsePsw(inputString)) ? 1 : 0);
     return arr.reduce((a, b) => a + b, 0)
 }
 
