@@ -2,14 +2,6 @@ const {expect} = require('chai');
 const day1Methods = require('../src/solutions/day-1');
 
 describe('Day 1', () => {
-    describe('sumNumbers', () => {
-        const { sumNumbers } = day1Methods;
-
-        it('adds two numbers together', () => {
-            expect(sumNumbers(2,2)).to.eql(4);
-        });
-    });
-
     describe('findPairThatSumToNum', () => {
         const { findPairThatSumToNum } = day1Methods;
 
@@ -40,7 +32,8 @@ describe('Day 1', () => {
     });
 
     describe('findTrioThatSumToNum', () => {
-        const { findTrioThatSumToNum, sumArr } = day1Methods;
+        const { findTrioThatSumToNum } = day1Methods;
+        const {} = require('../src/helper-methods/helper-methods');
 
         it('returns an arr of numbers with a length of 3', () => {
             const inputArr = [0,1,2,3,4,5,6,7,8];
@@ -55,7 +48,7 @@ describe('Day 1', () => {
             const sumTarget = 11;
 
             const trio = findTrioThatSumToNum(inputArr, sumTarget);
-            const sum = sumArr(trio);
+            const sum = trio.reduce((a,b) => a+b);
 
             expect(sum).to.eql(sumTarget);
         });

@@ -1,18 +1,4 @@
-const sumNumbers = (num1, num2) => {
-    return (num1 + num2);
-}
-
-const sumArr = arrNums => {
-    return arrNums.reduce(sumNumbers, 0);
-}
-
-const multiplyNums = (num1, num2) => {
-    return (num1 * num2);
-}
-
-const multiplyArr = arrNums => {
-    return arrNums.reduce(multiplyNums, 1);
-}
+const { sumArr, multiplyArr } = require('../helper-methods/helper-methods');
 
 const findPairThatSumToNum = (numList, sumTarget) => {
     for (let i = 0; i < numList.length; i++) {
@@ -59,9 +45,6 @@ const day1SolutionPt2 = (inputData, targetSum) => {
 }
 
 module.exports = {
-    sumArr,
-    sumNumbers,
-    multiplyArr,
     findPairThatSumToNum,
     findTrioThatSumToNum,
     day1SolutionPt1,

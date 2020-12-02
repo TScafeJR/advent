@@ -1,3 +1,5 @@
+const { sumArr } = require('../helper-methods/helper-methods');
+
 const parsePsw = (inputString) => {
     const [occurString, letter, psw] = inputString.split(' ');
     const [firstCondition, secondCondition] = occurString.split('-');
@@ -33,7 +35,7 @@ const meetsPt2Criteria = pswObj => {
 
 const day2Solution = (inputArr, criteraMethod) => {
     const arr = inputArr.map(inputString => criteraMethod(parsePsw(inputString)) ? 1 : 0);
-    return arr.reduce((a, b) => a + b, 0)
+    return arr.reduce(sumArr);
 }
 
 module.exports = {
