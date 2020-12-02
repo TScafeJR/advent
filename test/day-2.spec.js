@@ -7,7 +7,7 @@ describe('Day 2', () => {
 
         it('returns an object with the expected fields', () => {
             const inputString = '1-3 a: abcde';
-            const expectedKeys = ['minOccur', 'maxOccur', 'letter', 'psw'];
+            const expectedKeys = ['firstCondition', 'secondCondition', 'letter', 'psw'];
 
             const returnObj = parsePsw(inputString);
 
@@ -20,8 +20,8 @@ describe('Day 2', () => {
 
         it('returns false if the first letter and second letter are not right', () => {
             const testObj = {
-                minOccur: 1,
-                maxOccur: 4,
+                firstCondition: 1,
+                secondCondition: 4,
                 letter: 'd',
                 psw: 'adda'
             }
@@ -33,8 +33,8 @@ describe('Day 2', () => {
 
         it('returns false if the first letter and second letter are the search letter', () => {
             const testObj = {
-                minOccur: 1,
-                maxOccur: 4,
+                firstCondition: 1,
+                secondCondition: 4,
                 letter: 'd',
                 psw: 'dddd'
             }
@@ -46,8 +46,8 @@ describe('Day 2', () => {
 
         it('returns true if it meets the criteria', () => {
             const testObj = {
-                minOccur: 1,
-                maxOccur: 4,
+                firstCondition: 1,
+                secondCondition: 4,
                 letter: 'd',
                 psw: 'ddda'
             }

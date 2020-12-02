@@ -1,17 +1,17 @@
 const parsePsw = (inputString) => {
     const [occurString, letter, psw] = inputString.split(' ');
-    const [minOccur, maxOccur] = occurString.split('-');
+    const [firstCondition, secondCondition] = occurString.split('-');
 
     return {
-        minOccur,
-        maxOccur,
+        firstCondition,
+        secondCondition,
         letter: letter.replace(':', ''),
         psw
     }
 }
 
 const meetsPt1Criteria = pswObj => {
-    const {minOccur, maxOccur, letter, psw} = pswObj;
+    const {firstCondition: minOccur, secondCondition: maxOccur, letter, psw} = pswObj;
     const letterArr = psw.split('');
 
     const filteredArr = letterArr.filter(l => letter === l);
@@ -20,7 +20,7 @@ const meetsPt1Criteria = pswObj => {
 };
 
 const meetsPt2Criteria = pswObj => {
-    const {minOccur: firstIndex, maxOccur: secondIndex, letter, psw} = pswObj;
+    const {firstCondition: firstIndex, secondCondition: secondIndex, letter, psw} = pswObj;
     const letterArr = psw.split('');
 
     const firstLetter = letterArr[firstIndex - 1];
